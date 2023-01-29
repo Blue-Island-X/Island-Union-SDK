@@ -11,7 +11,7 @@ export class JDClient {
     constructor(clientConfig: ClientConfig) {
         this.appKey = clientConfig.appKey;
         this.secretKey = clientConfig.secretKey;
-        this.endpoint = clientConfig.endpoint || 'https://router.jd.com/api';
+        this.endpoint = clientConfig.endpoint || 'https://api.jd.com/routerjson';
     }
 
     sign(params: object) {
@@ -20,26 +20,43 @@ export class JDClient {
         var plainString = '';
         for (var i = 0; i < sortedKeys.length; i++) {
             const key = sortedKeys[i];
-            const value = params[key];
+            const value = params[key as keyof typeof params];
             plainString += key + value;
         }
         plainString = this.secretKey + plainString + this.secretKey;
-        
+
         return Md5.hashStr(plainString).toUpperCase();
     }
 
     async execute(method: string, data: object) {
-        const params = {
+        const params : any = {
             method,
-            v: '2.0',
+            v: '1.0',
             format: 'json',
             sign_method: 'md5',
             app_key: this.appKey,
             timestamp: moment().format('YYYY-MM-DD HH:mm:ss'),
         };
-        params['360buy_param_json'] = data;
+        params['360buy_param_json'] = JSON.stringify(data);
         params['sign'] = this.sign(params);
 
         const response = await axios.get(this.endpoint, { params });
+        const responseData = response.data;
+
+        if (responseData['error_response']) {
+            const error = responseData['error_response'];
+
+            return {
+                code: parseInt(error.code),
+                message: error.zh_desc
+            }
+        }
+
+        const field = `${method.replace(/\./g, '_')}_responce`;
+        const result = responseData[field];
+
+        result['queryResult'] = JSON.parse(result['queryResult']);
+
+        return result;
     }
 }

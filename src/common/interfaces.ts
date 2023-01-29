@@ -1,5 +1,5 @@
 /**
- * 初始化client对象参数类型
+ * 初始化 Client 对象参数类型
  */
 export interface ClientConfig {
     /**
