@@ -28,7 +28,7 @@ export class JDClient {
         return Md5.hashStr(plainString).toUpperCase();
     }
 
-    async execute(method: string, data: object) {
+    async execute(method: string, input: object) {
         const params : any = {
             method,
             v: '1.0',
@@ -37,7 +37,7 @@ export class JDClient {
             app_key: this.appKey,
             timestamp: moment().format('YYYY-MM-DD HH:mm:ss'),
         };
-        params['360buy_param_json'] = JSON.stringify(data);
+        params['360buy_param_json'] = JSON.stringify(input);
         params['sign'] = this.sign(params);
 
         const response = await axios.get(this.endpoint, { params });
