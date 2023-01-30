@@ -40,7 +40,7 @@ export class JDClient {
         params['360buy_param_json'] = JSON.stringify(input);
         params['sign'] = this.sign(params);
 
-        const response = await axios.get(this.endpoint, { params });
+        const response = await axios.post(this.endpoint, null, { params });
         const responseData = response.data;
 
         if (responseData['error_response']) {

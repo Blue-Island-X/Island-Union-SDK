@@ -15,8 +15,8 @@ export class SuningClient {
         this.endpoint = clientConfig.endpoint || 'https://open.suning.com/api/http/sopRequest';
     }
     
-    sign(secretKey: string, method: string, time: string, appKey: string, version: string, content: string) {
-        const plainString = `${secretKey}${method}${time}${appKey}${version}${Buffer.from(content).toString('base64')}`;
+    sign(secretKey: string, method: string, time: string, appKey: string, version: string, content: object) {
+        const plainString = `${secretKey}${method}${time}${appKey}${version}${Buffer.from(JSON.stringify(content)).toString('base64')}`;
         return Md5.hashStr(plainString).toLowerCase();
     }
 
@@ -32,7 +32,7 @@ export class SuningClient {
         const field = SuningUtil.getBizName(appMethod);
         const data = { sn_request: { sn_body: { [field]: input } } };
 
-        headers['signInfo'] = this.sign(this.secretKey, appMethod, headers['appRequestTime'], this.appKey, headers['versionNo'], JSON.stringify(data));
+        headers['signInfo'] = this.sign(this.secretKey, appMethod, headers['appRequestTime'], this.appKey, headers['versionNo'], data);
 
         const response = await axios.post(this.endpoint, data, { headers });
         const responseData = response.data;
