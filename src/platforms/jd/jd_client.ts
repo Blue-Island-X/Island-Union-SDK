@@ -1,5 +1,7 @@
 import axios from 'axios';
 import moment from 'moment';
+import querystring from 'querystring';
+
 import { Md5 } from 'ts-md5';
 import { ClientConfig } from '../../common/interfaces';
 
@@ -40,7 +42,7 @@ export class JDClient {
         params['360buy_param_json'] = JSON.stringify(input);
         params['sign'] = this.sign(params);
 
-        const response = await axios.post(this.endpoint, null, { params });
+        const response = await axios.post(this.endpoint, querystring.stringify(params));
         const responseData = response.data;
 
         if (responseData['error_response']) {

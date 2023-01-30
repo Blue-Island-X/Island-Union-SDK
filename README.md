@@ -4,14 +4,12 @@
 - [京东联盟](https://union.jd.com)
 - [苏宁联盟](https://sums.suning.com)
 
-## 如何安装
-
+## 1.如何安装
 ```
 npm i island-union-sdk --save
 ```
 
-## 如何使用
-
+## 2.如何使用
 - 1.京东联盟 [文档](https://union.jd.com/openplatform/api/v2)
 ```TypeScript
 import island from 'island-union-sdk';
