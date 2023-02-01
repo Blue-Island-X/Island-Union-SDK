@@ -21,19 +21,23 @@ export class SuningClient {
         return Md5.hashStr(plainString).toLowerCase();
     }
 
-    async execute(appMethod: string, input: object) {
+    async execute(method: string, input: object) {
+        const field = SuningUtil.getBizName(method);
+        const data = {
+            sn_request: {
+                sn_body: {
+                    [field]: input
+                }
+            }
+        };
         const headers : any = {
-            appMethod,
             format: 'json',
             versionNo: 'v1.2',
+            appMethod: method,
             appKey: this.appKey,
             appRequestTime: moment().format('YYYY-MM-DD HH:mm:ss')
         };
-
-        const field = SuningUtil.getBizName(appMethod);
-        const data = { sn_request: { sn_body: { [field]: input } } };
-
-        headers['signInfo'] = this.sign(this.secretKey, appMethod, headers['appRequestTime'], this.appKey, headers['versionNo'], data);
+        headers['signInfo'] = this.sign(this.secretKey, method, headers['appRequestTime'], this.appKey, headers['versionNo'], data);
 
         const response = await axios.post(this.endpoint, data, { headers });
         const responseData = response.data;
