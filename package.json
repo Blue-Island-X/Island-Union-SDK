@@ -1,6 +1,6 @@
 {
   "name": "island-union-sdk",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Island (小蓝岛) 购物平台联盟聚合 SDK (淘宝联盟、京东联盟、多多进宝、苏宁联盟、唯品会联盟、抖音联盟、有赞联盟)",
   "main": "island/index.js",
   "scripts": {
