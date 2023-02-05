@@ -1,4 +1,4 @@
-import island from '../../island-union-sdk';
+const island = require('island-union-sdk');
 
 const client = new island.suning.Client({
     appKey: '********************************',
