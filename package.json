@@ -2,7 +2,7 @@
   "name": "island-union-sdk",
   "version": "1.0.0",
   "description": "Island (小蓝岛) 购物平台联盟聚合 SDK (淘宝联盟、京东联盟、拼多多联盟、苏宁联盟、唯品会联盟)",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -14,10 +14,18 @@
     "island",
     "union",
     "taobao",
+    "taobaoke",
+    "alimama",
+    "jd",
     "jingdong",
     "pinduoduo",
+    "duoduojinbao",
     "suning",
-    "vipshop"
+    "vip",
+    "vipshop",
+    "douyin",
+    "tiktok",
+    "youzan"
   ],
   "author": "开封小蓝岛科技有限公司",
   "license": "MIT",
