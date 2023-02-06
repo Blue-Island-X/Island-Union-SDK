@@ -1,8 +1,8 @@
+import qs from 'qs';
 import axios from 'axios';
 import moment from 'moment';
-import querystring from 'querystring';
+import md5 from 'crypto-js/md5';
 
-import { Md5 } from 'ts-md5';
 import { ClientConfig } from '../../common/interfaces';
 
 export class TaobaoClient {
@@ -26,7 +26,7 @@ export class TaobaoClient {
             plainString += key + value;
         }
         plainString = this.secretKey + plainString + this.secretKey;
-        return Md5.hashStr(plainString).toUpperCase();
+        return md5(plainString).toString().toUpperCase();
     }
 
     async execute(method: string, input: object) {
@@ -40,15 +40,16 @@ export class TaobaoClient {
         };
         params['sign'] = this.sign(Object.assign({}, params, input));
 
-        const response = await axios.post(this.endpoint, querystring.stringify(input as any), { params });
+        const response = await axios.post(this.endpoint, qs.stringify(input), { params });
         const responseData = response.data;
 
         if (responseData['error_response']) {
             const error = responseData['error_response'];
 
             return {
-                code: parseInt(error['code']),
-                message: error['msg']
+                code: error['code'],
+                message: error['msg'],
+                error: true
             };
         }
 

@@ -1,7 +1,7 @@
-import axios from 'axios'
+import axios from 'axios';
 import moment from 'moment';
+import md5 from 'crypto-js/md5';
 
-import { Md5 } from 'ts-md5';
 import { SuningUtil } from './suning_util';
 import { ClientConfig } from '../../common/interfaces';
 
@@ -18,7 +18,7 @@ export class SuningClient {
     
     sign(secretKey: string, method: string, time: string, appKey: string, version: string, content: object) {
         const plainString = `${secretKey}${method}${time}${appKey}${version}${Buffer.from(JSON.stringify(content)).toString('base64')}`;
-        return Md5.hashStr(plainString).toLowerCase();
+        return md5(plainString).toString().toLowerCase();
     }
 
     async execute(method: string, input: object) {
@@ -47,7 +47,8 @@ export class SuningClient {
 
             return {
                 code: error['error_code'],
-                message: error['error_msg']
+                message: error['error_msg'],
+                error: true
             }
         }
 

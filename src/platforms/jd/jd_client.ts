@@ -1,8 +1,8 @@
+import qs from 'qs';
 import axios from 'axios';
 import moment from 'moment';
-import querystring from 'querystring';
+import md5 from 'crypto-js/md5';
 
-import { Md5 } from 'ts-md5';
 import { ClientConfig } from '../../common/interfaces';
 
 export class JDClient {
@@ -27,7 +27,7 @@ export class JDClient {
         }
         plainString = this.secretKey + plainString + this.secretKey;
 
-        return Md5.hashStr(plainString).toUpperCase();
+        return md5(plainString).toString().toUpperCase();
     }
 
     async execute(method: string, input: object) {
@@ -42,7 +42,7 @@ export class JDClient {
         params['360buy_param_json'] = JSON.stringify(input);
         params['sign'] = this.sign(params);
 
-        const response = await axios.post(this.endpoint, querystring.stringify(params));
+        const response = await axios.post(this.endpoint, qs.stringify(params));
         const responseData = response.data;
 
         if (responseData['error_response']) {
@@ -50,7 +50,8 @@ export class JDClient {
 
             return {
                 code: parseInt(error.code),
-                message: error.zh_desc
+                message: error.zh_desc,
+                error: true
             }
         }
 

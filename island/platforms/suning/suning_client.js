@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.SuningClient = void 0;
 const axios_1 = __importDefault(require("axios"));
 const moment_1 = __importDefault(require("moment"));
-const ts_md5_1 = require("ts-md5");
+const md5_1 = __importDefault(require("crypto-js/md5"));
 const suning_util_1 = require("./suning_util");
 class SuningClient {
     constructor(clientConfig) {
@@ -16,7 +16,7 @@ class SuningClient {
     }
     sign(secretKey, method, time, appKey, version, content) {
         const plainString = `${secretKey}${method}${time}${appKey}${version}${Buffer.from(JSON.stringify(content)).toString('base64')}`;
-        return ts_md5_1.Md5.hashStr(plainString).toLowerCase();
+        return (0, md5_1.default)(plainString).toString().toLowerCase();
     }
     async execute(method, input) {
         const field = suning_util_1.SuningUtil.getBizName(method);
@@ -41,7 +41,8 @@ class SuningClient {
             const error = responseData['sn_responseContent']['sn_error'];
             return {
                 code: error['error_code'],
-                message: error['error_msg']
+                message: error['error_msg'],
+                error: true
             };
         }
         return responseData['sn_responseContent']['sn_body'][field];

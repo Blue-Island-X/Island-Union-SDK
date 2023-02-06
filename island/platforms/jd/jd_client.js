@@ -4,10 +4,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.JDClient = void 0;
+const qs_1 = __importDefault(require("qs"));
 const axios_1 = __importDefault(require("axios"));
 const moment_1 = __importDefault(require("moment"));
-const querystring_1 = __importDefault(require("querystring"));
-const ts_md5_1 = require("ts-md5");
+const md5_1 = __importDefault(require("crypto-js/md5"));
 class JDClient {
     constructor(clientConfig) {
         this.appKey = clientConfig.appKey;
@@ -23,7 +23,7 @@ class JDClient {
             plainString += key + value;
         }
         plainString = this.secretKey + plainString + this.secretKey;
-        return ts_md5_1.Md5.hashStr(plainString).toUpperCase();
+        return (0, md5_1.default)(plainString).toString().toUpperCase();
     }
     async execute(method, input) {
         const params = {
@@ -36,13 +36,14 @@ class JDClient {
         };
         params['360buy_param_json'] = JSON.stringify(input);
         params['sign'] = this.sign(params);
-        const response = await axios_1.default.post(this.endpoint, querystring_1.default.stringify(params));
+        const response = await axios_1.default.post(this.endpoint, qs_1.default.stringify(params));
         const responseData = response.data;
         if (responseData['error_response']) {
             const error = responseData['error_response'];
             return {
                 code: parseInt(error.code),
-                message: error.zh_desc
+                message: error.zh_desc,
+                error: true
             };
         }
         const field = `${method.replace(/\./g, '_')}_responce`;
