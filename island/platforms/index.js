@@ -1,8 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.vip = exports.taobao = exports.suning = exports.jd = void 0;
+exports.vip = exports.taobao = exports.suning = exports.pinduoduo = exports.jd = void 0;
 var jd_1 = require("./jd");
 Object.defineProperty(exports, "jd", { enumerable: true, get: function () { return jd_1.jd; } });
+var pinduoduo_1 = require("./pinduoduo");
+Object.defineProperty(exports, "pinduoduo", { enumerable: true, get: function () { return pinduoduo_1.pinduoduo; } });
 var suning_1 = require("./suning");
 Object.defineProperty(exports, "suning", { enumerable: true, get: function () { return suning_1.suning; } });
 var taobao_1 = require("./taobao");

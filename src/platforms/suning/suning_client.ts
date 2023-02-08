@@ -37,7 +37,7 @@ export class SuningClient {
             appKey: this.appKey,
             appRequestTime: moment().format('YYYY-MM-DD HH:mm:ss')
         };
-        headers['signInfo'] = this.sign(this.secretKey, method, headers['appRequestTime'], this.appKey, headers['versionNo'], data);
+        headers['signInfo'] = this.sign(this.secretKey, method, headers.appRequestTime, this.appKey, headers.versionNo, data);
 
         const response = await axios.post(this.endpoint, data, { headers });
         const responseData = response.data;

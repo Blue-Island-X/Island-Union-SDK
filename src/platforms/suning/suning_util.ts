@@ -1547,7 +1547,7 @@ export class SuningUtil {
             'suning.swl.waresale.get' : 'getWareSale',
             'suning.swl.waresale.query' : 'queryWareSale',
             'suning.unsalestockreport.query' : 'queryUnsaleStockReport'
-        }
+        };
     
         return method[input];
     }

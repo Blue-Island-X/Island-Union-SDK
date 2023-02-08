@@ -3,6 +3,7 @@
 本 SDK 支持以下购物平台联盟:
 - [淘宝联盟](https://aff-open.taobao.com)
 - [京东联盟](https://union.jd.com)
+- [多多进宝](https://jinbao.pinduoduo.com)
 - [苏宁联盟](https://sums.suning.com)
 - [唯品会联盟](https://union.vip.com) [HMAC-MD5]
 
@@ -26,6 +27,8 @@ const client = new island.taobao.Client({
 const result = await client.execute('<API 方法名称>', { <业务参数> });
 ```
 
+> P.S: 淘宝联盟接口必须传入字符 id, 数字 id 已经下线无法使用
+
 - 2.京东联盟 [文档](https://union.jd.com/openplatform/api/v2)
 ```TypeScript
 import island from 'island-union-sdk';
@@ -38,7 +41,22 @@ const client = new island.jd.Client({
 const result = await client.execute('<API 方法名称>', { <业务参数> });
 ```
 
-- 3.苏宁联盟 [文档](https://open.suning.com/ospos/apipage/toApiMethodDetailMenuNew.do?bustypeId=3)
+- 3.多多进宝 [文档](https://open.pinduoduo.com/application/document/api?id=pdd.ddk.goods.pid.generate)
+
+```TypeScript
+import island from 'island-union-sdk';
+
+const client = new island.pinduoduo.Client({
+    appKey: '<你的 ClientId>',
+    secretKey: '<你的 ClientSecret>'
+});
+
+const result = await client.execute('<API 方法名称>', { <业务参数> });
+```
+
+> P.S: 多多进宝接口必须传入 goodsSign (字符 id), goodsId (数字 id) 已经下线无法使用
+
+- 4.苏宁联盟 [文档](https://open.suning.com/ospos/apipage/toApiMethodDetailMenuNew.do?bustypeId=3)
 
 ```TypeScript
 import island from 'island-union-sdk';
@@ -51,7 +69,7 @@ const client = new island.suning.Client({
 const result = await client.execute('<API 方法名称>', { <业务参数> });
 ```
 
-- 4.唯品会联盟 [文档](https://vop.vip.com/home#/api/service/list/2)
+- 5.唯品会联盟 [文档](https://vop.vip.com/home#/api/service/list/2)
 
 ```TypeScript
 import island from 'island-union-sdk';
