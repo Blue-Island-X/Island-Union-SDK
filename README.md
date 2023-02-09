@@ -93,7 +93,7 @@ const client = new island.youzan.Client({
     grantId: '<你的有赞客 Id>'
 });
 
-const result = await client.execute('<API 接口名称>', { <业务参数> });
+const result = await client.execute('<API 接口名称>', '<API 接口版本>', { <业务参数> });
 ```
 
 ## 3.注意事项
