@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.vip = exports.taobao = exports.suning = exports.pinduoduo = exports.jd = void 0;
+exports.youzan = exports.vip = exports.taobao = exports.suning = exports.pinduoduo = exports.jd = void 0;
 var jd_1 = require("./jd");
 Object.defineProperty(exports, "jd", { enumerable: true, get: function () { return jd_1.jd; } });
 var pinduoduo_1 = require("./pinduoduo");
@@ -11,3 +11,5 @@ var taobao_1 = require("./taobao");
 Object.defineProperty(exports, "taobao", { enumerable: true, get: function () { return taobao_1.taobao; } });
 var vip_1 = require("./vip");
 Object.defineProperty(exports, "vip", { enumerable: true, get: function () { return vip_1.vip; } });
+var youzan_1 = require("./youzan");
+Object.defineProperty(exports, "youzan", { enumerable: true, get: function () { return youzan_1.youzan; } });

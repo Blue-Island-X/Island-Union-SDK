@@ -15,6 +15,12 @@ export interface ClientConfig {
     secretKey: string;
 
     /**
+     * @param {grantId} 推广者 Id
+     * 仅有赞平台需要传入。
+     */
+    grantId: string;
+
+    /**
      * @param {endpoint} API 接口地址
      * 可选, 若 API 接口地址变更则需要传入。
      */
