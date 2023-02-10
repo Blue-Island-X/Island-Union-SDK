@@ -46,14 +46,14 @@ export class KaolaClient {
         const response = await axios.post(this.endpoint, qs.stringify(input), { params, headers });
         const responseData = response.data;
 
-        if (responseData['code'] !== 200) {
+        if (responseData.code !== 200) {
             return {
-                code: responseData['code'],
-                message: responseData['msg'],
+                code: responseData.code,
+                message: responseData.msg,
                 error: true
             };
         }
 
-        return responseData['data'];
+        return responseData.data;
     }
 }

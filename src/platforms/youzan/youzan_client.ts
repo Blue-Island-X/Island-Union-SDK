@@ -72,24 +72,24 @@ export class YouzanClient {
         const response = await axios.post(`${this.endpoint}/api/${method}/${version}`, input, { params });
         const responseData = response.data;
 
-        if (responseData['gw_err_resp']) {
-            const error = responseData['gw_err_resp'];
+        if (responseData.gw_err_resp) {
+            const error = responseData.gw_err_resp;
 
             return {
-                code: error['err_code'],
-                message: error['err_msg'],
+                code: error.err_code,
+                message: error.err_msg,
                 error: true
             };
         }
         
         if (responseData.success === false) {
             return {
-                code: responseData['code'],
-                message: responseData['message'],
+                code: responseData.code,
+                message: responseData.message,
                 error: true
             };
         }
 
-        return responseData['data'];
+        return responseData.data;
     }
 }

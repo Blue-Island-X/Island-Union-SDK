@@ -42,14 +42,14 @@ export class VipClient {
         const response = await axios.post(this.endpoint, input, { params });
         const responseData = response.data;
 
-        if (responseData['returnCode'] && responseData['returnMessage']) {
+        if (responseData.returnCode && responseData.returnMessage) {
             return {
-                code: responseData['returnCode'],
-                message: responseData['returnMessage'],
+                code: responseData.returnCode,
+                message: responseData.returnMessage,
                 error: true
             };
         }
 
-        return responseData['result'];
+        return responseData.result;
     }
 }

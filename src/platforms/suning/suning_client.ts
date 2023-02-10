@@ -42,16 +42,16 @@ export class SuningClient {
         const response = await axios.post(this.endpoint, data, { headers });
         const responseData = response.data;
 
-        if (responseData['sn_responseContent']['sn_error']) {
-            const error = responseData['sn_responseContent']['sn_error'];
+        if (responseData.sn_responseContent.sn_error) {
+            const error = responseData.sn_responseContent.sn_error;
 
             return {
-                code: error['error_code'],
-                message: error['error_msg'],
+                code: error.error_code,
+                message: error.error_msg,
                 error: true
             }
         }
 
-        return responseData['sn_responseContent']['sn_body'][field];
+        return responseData.sn_responseContent.sn_body[field];
     }
 }

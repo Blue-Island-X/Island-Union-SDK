@@ -1,7 +1,7 @@
 {
   "name": "island-union-sdk",
   "version": "1.0.4",
-  "description": "Island (小蓝岛) 购物平台联盟聚合 SDK (淘宝联盟、京东联盟、多多进宝、苏宁联盟、唯品会联盟、抖音联盟、有赞联盟)",
+  "description": "Island (小蓝岛) 购物平台联盟聚合 SDK (淘宝联盟、京东联盟、多多进宝、苏宁联盟、唯品会联盟、考拉联盟、有赞联盟)",
   "main": "island/index.js",
   "scripts": {
     "build": "tsc"
@@ -24,8 +24,6 @@
     "vip",
     "vipshop",
     "kaola",
-    "douyin",
-    "tiktok",
     "youzan"
   ],
   "author": "开封小蓝岛科技有限公司",

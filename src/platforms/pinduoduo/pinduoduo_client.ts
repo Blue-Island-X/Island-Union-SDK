@@ -44,12 +44,12 @@ export class PinduoduoClient {
         const response = await axios.post(this.endpoint, qs.stringify(input), { params });
         const responseData = response.data;
 
-        if (responseData['error_response']) {
-            const error = responseData['error_response'];
+        if (responseData.error_response) {
+            const error = responseData.error_response;
 
             return {
-                code: error['error_code'],
-                message: `${error['error_msg']}: ${error['sub_msg']}`,
+                code: error.error_code,
+                message: `${error.error_msg}: ${error.sub_msg}`,
                 error: true
             };
         }
