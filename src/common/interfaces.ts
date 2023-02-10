@@ -16,9 +16,9 @@ export interface ClientConfig {
 
     /**
      * @param {grantId} 推广者 Id
-     * 仅有赞平台需要传入。
+     * 仅考拉海购和有赞平台需要传入。
      */
-    grantId: string;
+    unionId: string;
 
     /**
      * @param {endpoint} API 接口地址

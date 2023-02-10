@@ -6,6 +6,7 @@
 - [多多进宝](https://jinbao.pinduoduo.com)
 - [苏宁联盟](https://sums.suning.com)
 - [唯品会联盟](https://union.vip.com) [HMAC-MD5]
+- [考拉联盟](https://pub.kaola.com)
 - [有赞联盟](https://www.youzan.com/intro/zanke) [N/A]
 
 > P.S: 若没有特别标注, 所有签名算法均使用 [MD5](https://en.wikipedia.org/wiki/MD5) 实现
@@ -83,14 +84,26 @@ const client = new island.vip.Client({
 const result = await client.execute('<API 服务名称>', '<API 服务版本>', '<API 方法名称>', { <业务参数> });
 ```
 
-- 6.有赞联盟 [文档](https://doc.youzanyun.com/list/API/1303)
+- 6.考拉联盟 [文档](https://kaola-haitao.oss.kaolacdn.com/a5b08dbc-e7ae-4464-9d5d-e55cdc78f121.docx?spm=a2v0d.b9947081.0.0.12fc2fbc2WT1tV&file=a5b08dbc-e7ae-4464-9d5d-e55cdc78f121.docx)
+```TypeScript
+import island from 'island-union-sdk';
+
+const client = new island.kaola.Client({
+    secretKey: '<你的 AppSecret>',
+    unionId: '<你的赚客 Id>'
+});
+
+const result = await client.execute('<API 接口名称>', { <业务参数> });
+```
+
+- 7.有赞联盟 [文档](https://doc.youzanyun.com/list/API/1303) [指南](https://shimo.im/docs/tTwjdRYDcHvDdvQ9/read)
 ```TypeScript
 import island from 'island-union-sdk';
 
 const client = new island.youzan.Client({
     appKey: '<你的 AppKey>',
     secretKey: '<你的 AppSecret>',
-    grantId: '<你的有赞客 Id>'
+    unionId: '<你的有赞客 Id>'
 });
 
 const result = await client.execute('<API 接口名称>', '<API 接口版本>', { <业务参数> });

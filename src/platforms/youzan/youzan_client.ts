@@ -15,7 +15,7 @@ export class YouzanClient {
     constructor(clientConfig: ClientConfig) {
         this.appKey = clientConfig.appKey;
         this.secretKey = clientConfig.secretKey;
-        this.grantId = clientConfig.grantId;
+        this.grantId = clientConfig.unionId;
         this.endpoint = clientConfig.endpoint || 'https://open.youzanyun.com';
         this.accessToken = '';
         this.refreshToken = '';
