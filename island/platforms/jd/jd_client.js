@@ -38,8 +38,8 @@ class JDClient {
         params['sign'] = this.sign(params);
         const response = await axios_1.default.post(this.endpoint, qs_1.default.stringify(params));
         const responseData = response.data;
-        if (responseData['error_response']) {
-            const error = responseData['error_response'];
+        if (responseData.error_response) {
+            const error = responseData.error_response;
             return {
                 code: parseInt(error.code),
                 message: error.zh_desc,
@@ -47,9 +47,7 @@ class JDClient {
             };
         }
         const field = `${method.replace(/\./g, '_')}_responce`;
-        const result = responseData[field];
-        result['queryResult'] = JSON.parse(result['queryResult']);
-        return result;
+        return responseData[field];
     }
 }
 exports.JDClient = JDClient;

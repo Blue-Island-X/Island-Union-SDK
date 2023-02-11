@@ -4,7 +4,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.PinduoduoClient = void 0;
-const qs_1 = __importDefault(require("qs"));
 const axios_1 = __importDefault(require("axios"));
 const moment_1 = __importDefault(require("moment"));
 const md5_1 = __importDefault(require("crypto-js/md5"));
@@ -35,7 +34,7 @@ class PinduoduoClient {
             timestamp: (0, moment_1.default)().unix(),
         };
         params['sign'] = this.sign(Object.assign({}, params, input));
-        const response = await axios_1.default.post(this.endpoint, qs_1.default.stringify(input), { params });
+        const response = await axios_1.default.post(this.endpoint, input, { params });
         const responseData = response.data;
         if (responseData.error_response) {
             const error = responseData.error_response;
