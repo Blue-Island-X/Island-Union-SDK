@@ -37,11 +37,11 @@ class TaobaoClient {
         params['sign'] = this.sign(Object.assign({}, params, input));
         const response = await axios_1.default.post(this.endpoint, qs_1.default.stringify(input), { params });
         const responseData = response.data;
-        if (responseData['error_response']) {
-            const error = responseData['error_response'];
+        if (responseData.error_response) {
+            const error = responseData.error_response;
             return {
-                code: error['code'],
-                message: error['msg'],
+                code: error.code,
+                message: error.msg,
                 error: true
             };
         }

@@ -39,14 +39,14 @@ class KaolaClient {
         params['sign'] = this.sign(Object.assign({}, params, input));
         const response = await axios_1.default.post(this.endpoint, qs_1.default.stringify(input), { params, headers });
         const responseData = response.data;
-        if (responseData['code'] !== 200) {
+        if (responseData.code !== 200) {
             return {
-                code: responseData['code'],
-                message: responseData['msg'],
+                code: responseData.code,
+                message: responseData.msg,
                 error: true
             };
         }
-        return responseData['data'];
+        return responseData.data;
     }
 }
 exports.KaolaClient = KaolaClient;

@@ -36,14 +36,14 @@ class VipClient {
         params['sign'] = this.sign(params, input);
         const response = await axios_1.default.post(this.endpoint, input, { params });
         const responseData = response.data;
-        if (responseData['returnCode'] && responseData['returnMessage']) {
+        if (responseData.returnCode && responseData.returnMessage) {
             return {
-                code: responseData['returnCode'],
-                message: responseData['returnMessage'],
+                code: responseData.returnCode,
+                message: responseData.returnMessage,
                 error: true
             };
         }
-        return responseData['result'];
+        return responseData.result;
     }
 }
 exports.VipClient = VipClient;
