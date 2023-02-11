@@ -7,7 +7,7 @@ exports.TaobaoClient = void 0;
 const qs_1 = __importDefault(require("qs"));
 const axios_1 = __importDefault(require("axios"));
 const moment_1 = __importDefault(require("moment"));
-const md5_1 = __importDefault(require("crypto-js/md5"));
+const hmac_sha256_1 = __importDefault(require("crypto-js/hmac-sha256"));
 class TaobaoClient {
     constructor(clientConfig) {
         this.appKey = clientConfig.appKey;
@@ -22,15 +22,14 @@ class TaobaoClient {
             const value = params[key];
             plainString += key + value;
         }
-        plainString = this.secretKey + plainString + this.secretKey;
-        return (0, md5_1.default)(plainString).toString().toUpperCase();
+        return (0, hmac_sha256_1.default)(plainString, this.secretKey).toString().toUpperCase();
     }
     async execute(method, input) {
         const params = {
             method,
             v: '2.0',
             format: 'json',
-            sign_method: 'md5',
+            sign_method: 'hmac-sha256',
             app_key: this.appKey,
             timestamp: (0, moment_1.default)().unix()
         };

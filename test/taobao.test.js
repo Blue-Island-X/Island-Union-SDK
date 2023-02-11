@@ -5,7 +5,7 @@ const client = new island.taobao.Client({
     secretKey: '********************************'
 });
 
-client.execute('taobao.tbk.item.info.get', { num_iids: 'zB624aAtBCOMD7JhdAYCdt4-73j4XZiwRbpdQwxc0' }).then(result => {
+client.execute('taobao.tbk.item.info.get', { num_iids: 'jGDpnGWs0ty0vMKtN52TJte-e5yxZK0CGonBk6Gyczo' }).then(result => {
     const goods = result.results.n_tbk_item[0];
     console.log(`[*] 商品名称: ${goods.title}`);
     console.log(`[*] 商品封面: ${goods.pict_url}`);

@@ -1,7 +1,7 @@
 # 小蓝岛联盟聚合 SDK
 
 本 SDK 支持以下购物平台联盟:
-- [淘宝联盟](https://aff-open.taobao.com)
+- [淘宝联盟](https://aff-open.taobao.com) [HMAC-SHA256]
 - [京东联盟](https://union.jd.com)
 - [多多进宝](https://jinbao.pinduoduo.com)
 - [苏宁联盟](https://sums.suning.com)
