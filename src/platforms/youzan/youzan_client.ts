@@ -24,7 +24,6 @@ export class YouzanClient {
 
     private async getToken(refresh: boolean = false) {
         let data;
-
         if (refresh) {
             data = {
                 client_id: this.appKey,

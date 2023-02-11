@@ -1,4 +1,3 @@
-import qs from 'qs';
 import axios from 'axios';
 import moment from 'moment';
 import md5 from 'crypto-js/md5';
@@ -41,7 +40,7 @@ export class PinduoduoClient {
         };
         params['sign'] = this.sign(Object.assign({}, params, input));
 
-        const response = await axios.post(this.endpoint, qs.stringify(input), { params });
+        const response = await axios.post(this.endpoint, input, { params });
         const responseData = response.data;
 
         if (responseData.error_response) {
