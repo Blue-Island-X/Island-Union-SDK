@@ -45,21 +45,17 @@ export class JDClient {
         const response = await axios.post(this.endpoint, qs.stringify(params));
         const responseData = response.data;
 
-        if (responseData['error_response']) {
-            const error = responseData['error_response'];
+        if (responseData.error_response) {
+            const error = responseData.error_response;
 
             return {
                 code: parseInt(error.code),
                 message: error.zh_desc,
                 error: true
-            }
+            };
         }
 
         const field = `${method.replace(/\./g, '_')}_responce`;
-        const result = responseData[field];
-
-        result['queryResult'] = JSON.parse(result['queryResult']);
-
-        return result;
+        return responseData[field];
     }
 }
