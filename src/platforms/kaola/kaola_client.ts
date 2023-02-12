@@ -1,8 +1,8 @@
-import qs from 'qs';
 import axios from 'axios';
 import moment from 'moment';
 import md5 from 'crypto-js/md5';
 
+import { DataUtil } from '../../common/data';
 import { ClientConfig } from '../../common/interfaces';
 
 export class KaolaClient {
@@ -43,7 +43,7 @@ export class KaolaClient {
         };
         params['sign'] = this.sign(Object.assign({}, params, input));
 
-        const response = await axios.post(this.endpoint, qs.stringify(input), { params, headers });
+        const response = await axios.post(this.endpoint, DataUtil.object2FormData(input), { params, headers });
         const responseData = response.data;
 
         if (responseData.code !== 200) {

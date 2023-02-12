@@ -4,10 +4,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.TaobaoClient = void 0;
-const qs_1 = __importDefault(require("qs"));
 const axios_1 = __importDefault(require("axios"));
 const moment_1 = __importDefault(require("moment"));
 const hmac_sha256_1 = __importDefault(require("crypto-js/hmac-sha256"));
+const data_1 = require("../../common/data");
 class TaobaoClient {
     constructor(clientConfig) {
         this.appKey = clientConfig.appKey;
@@ -34,7 +34,7 @@ class TaobaoClient {
             timestamp: (0, moment_1.default)().unix()
         };
         params['sign'] = this.sign(Object.assign({}, params, input));
-        const response = await axios_1.default.post(this.endpoint, qs_1.default.stringify(input), { params });
+        const response = await axios_1.default.post(this.endpoint, data_1.DataUtil.object2FormData(input), { params });
         const responseData = response.data;
         if (responseData.error_response) {
             const error = responseData.error_response;

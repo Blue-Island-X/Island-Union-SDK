@@ -1,8 +1,8 @@
-import qs from 'qs';
 import axios from 'axios';
 import moment from 'moment';
 import md5 from 'crypto-js/md5';
 
+import { DataUtil } from '../../common/data';
 import { ClientConfig } from '../../common/interfaces';
 
 export class JDClient {
@@ -42,7 +42,7 @@ export class JDClient {
         params['360buy_param_json'] = JSON.stringify(input);
         params['sign'] = this.sign(params);
 
-        const response = await axios.post(this.endpoint, qs.stringify(params));
+        const response = await axios.post(this.endpoint, DataUtil.object2FormData(params));
         const responseData = response.data;
 
         if (responseData.error_response) {

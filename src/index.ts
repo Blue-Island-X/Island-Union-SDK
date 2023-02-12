@@ -1,1 +1,1 @@
-export * from './platforms'
+export * from './platforms';

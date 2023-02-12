@@ -4,10 +4,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.KaolaClient = void 0;
-const qs_1 = __importDefault(require("qs"));
 const axios_1 = __importDefault(require("axios"));
 const moment_1 = __importDefault(require("moment"));
 const md5_1 = __importDefault(require("crypto-js/md5"));
+const data_1 = require("../../common/data");
 class KaolaClient {
     constructor(clientConfig) {
         this.secretKey = clientConfig.secretKey;
@@ -37,7 +37,7 @@ class KaolaClient {
             timestamp: (0, moment_1.default)().format('YYYY-MM-DD HH:mm:ss')
         };
         params['sign'] = this.sign(Object.assign({}, params, input));
-        const response = await axios_1.default.post(this.endpoint, qs_1.default.stringify(input), { params, headers });
+        const response = await axios_1.default.post(this.endpoint, data_1.DataUtil.object2FormData(input), { params, headers });
         const responseData = response.data;
         if (responseData.code !== 200) {
             return {
