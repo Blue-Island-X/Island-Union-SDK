@@ -49,7 +49,7 @@ export class SuningClient {
                 code: error.error_code,
                 message: error.error_msg,
                 error: true
-            }
+            };
         }
 
         return responseData.sn_responseContent.sn_body[field];
