@@ -1,6 +1,6 @@
 {
   "name": "island-union-sdk",
-  "version": "1.0.7",
+  "version": "1.1.0",
   "description": "Island (小蓝岛) 购物平台联盟聚合 SDK (淘宝联盟、京东联盟、多多进宝、苏宁联盟、唯品会联盟、考拉联盟、有赞联盟)",
   "main": "union/index.js",
   "scripts": {
@@ -33,7 +33,7 @@
   },
   "homepage": "https://github.com/Blue-Island-X/Island-Union-SDK#readme",
   "dependencies": {
-    "axios": "^1.3.2",
+    "axios": "^1.3.3",
     "crypto-js": "^4.1.1",
     "form-data": "^4.0.0",
     "moment": "^2.29.4"
