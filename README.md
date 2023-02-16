@@ -1,4 +1,20 @@
-# 小蓝岛联盟聚合 SDK
+<h1 align="center">
+    <b>
+        <a href="https://github.com/Blue-Island-X"><img style="width:128px;" src="https://raw.githubusercontent.com/Blue-Island-X/Island-Union-SDK/main/resource/logo.png" /></a><br>
+    </b>
+</h1>
+
+<p align="center">小蓝岛购物平台联盟聚合 SDK</p>
+
+<div align="center">
+
+[![npm version](https://img.shields.io/npm/v/island-union-sdk.svg?style=flat-square)](https://www.npmjs.org/package/island-union-sdk)
+[![install size](https://img.shields.io/badge/dynamic/json?url=https://packagephobia.com/v2/api.json?p=island-union-sdk&query=$.install.pretty&label=install%20size&style=flat-square)](https://packagephobia.now.sh/result?p=island-union-sdk)
+[![npm bundle size](https://img.shields.io/bundlephobia/minzip/island-union-sdk?style=flat-square)](https://bundlephobia.com/package/island-union-sdk@latest)
+[![npm downloads](https://img.shields.io/npm/dm/island-union-sdk.svg?style=flat-square)](https://npm-stat.com/charts.html?package=island-union-sdk)
+[![Known Vulnerabilities](https://snyk.io/test/npm/island-union-sdk/badge.svg?style=flat-square)](https://snyk.io/test/npm/island-union-sdk)
+
+</div>
 
 本 SDK 支持以下购物平台联盟:
 - [淘宝联盟](https://aff-open.taobao.com) [HMAC-SHA256]
