@@ -8,11 +8,11 @@
 
 <div align="center">
 
-[![npm version](https://img.shields.io/npm/v/island-union-sdk.svg?style=flat-square)](https://www.npmjs.org/package/island-union-sdk)
-[![install size](https://img.shields.io/badge/dynamic/json?url=https://packagephobia.com/v2/api.json?p=island-union-sdk&query=$.install.pretty&label=install%20size&style=flat-square)](https://packagephobia.now.sh/result?p=island-union-sdk)
-[![npm bundle size](https://img.shields.io/bundlephobia/minzip/island-union-sdk?style=flat-square)](https://bundlephobia.com/package/island-union-sdk@latest)
-[![npm downloads](https://img.shields.io/npm/dm/island-union-sdk.svg?style=flat-square)](https://npm-stat.com/charts.html?package=island-union-sdk)
-[![Known Vulnerabilities](https://snyk.io/test/npm/island-union-sdk/badge.svg?style=flat-square)](https://snyk.io/test/npm/island-union-sdk)
+[![npm version](https://img.shields.io/npm/v/@blueislandx/island-union-sdk.svg?style=flat-square)](https://www.npmjs.org/package/@blueislandx/island-union-sdk)
+[![install size](https://img.shields.io/badge/dynamic/json?url=https://packagephobia.com/v2/api.json?p=@blueislandx/island-union-sdk&query=$.install.pretty&label=install%20size&style=flat-square)](https://packagephobia.now.sh/result?p=@blueislandx/island-union-sdk)
+[![npm bundle size](https://img.shields.io/bundlephobia/minzip/@blueislandx/island-union-sdk?style=flat-square)](https://bundlephobia.com/package/@blueislandx/island-union-sdk@latest)
+[![npm downloads](https://img.shields.io/npm/dm/@blueislandx/island-union-sdk.svg?style=flat-square)](https://npm-stat.com/charts.html?package=@blueislandx/island-union-sdk)
+[![Known Vulnerabilities](https://snyk.io/test/npm/@blueislandx/island-union-sdk/badge.svg?style=flat-square)](https://snyk.io/test/npm/@blueislandx/island-union-sdk)
 
 </div>
 
