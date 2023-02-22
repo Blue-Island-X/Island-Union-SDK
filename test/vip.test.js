@@ -1,7 +1,7 @@
 const uuid = require('uuid');
-const island = require('../../island-union-sdk');
+const union = require('../../island-union-sdk');
 
-const client = new island.vip.Client({
+const client = new union.vip.Client({
     appKey: '********',
     secretKey: '********************************'
 });

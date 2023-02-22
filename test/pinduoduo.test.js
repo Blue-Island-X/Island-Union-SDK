@@ -1,6 +1,6 @@
-const island = require('../../island-union-sdk');
+const union = require('../../island-union-sdk');
 
-const client = new island.pinduoduo.Client({
+const client = new union.pinduoduo.Client({
     appKey: '********************************',
     secretKey: '********************************'
 });

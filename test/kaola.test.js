@@ -1,6 +1,6 @@
-const island = require('../../island-union-sdk');
+const union = require('../../island-union-sdk');
 
-const client = new island.kaola.Client({
+const client = new union.kaola.Client({
     secretKey: '************************************',
     unionId: 'zhuanke_*********'
 });

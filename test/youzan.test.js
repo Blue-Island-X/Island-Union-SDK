@@ -1,6 +1,6 @@
-const island = require('../../island-union-sdk');
+const union = require('../../island-union-sdk');
 
-const client = new island.youzan.Client({
+const client = new union.youzan.Client({
     appKey: '******************',
     secretKey: '********************************',
     grantId: '**********'

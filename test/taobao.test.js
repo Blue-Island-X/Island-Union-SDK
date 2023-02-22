@@ -1,6 +1,6 @@
-const island = require('../../island-union-sdk');
+const union = require('../../island-union-sdk');
 
-const client = new island.taobao.Client({
+const client = new union.taobao.Client({
     appKey: '********',
     secretKey: '********************************'
 });
