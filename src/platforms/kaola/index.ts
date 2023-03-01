@@ -1,4 +1,4 @@
-import { KaolaClient } from './kaola_client';
+import { KaolaClient } from './kaola.client';
 
 export const kaola = {
     Client: KaolaClient

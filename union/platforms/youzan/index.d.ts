@@ -1,4 +1,4 @@
-import { YouzanClient } from './youzan_client';
+import { YouzanClient } from './youzan.client';
 export declare const youzan: {
     Client: typeof YouzanClient;
 };

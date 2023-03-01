@@ -1,4 +1,4 @@
-import { ClientConfig } from '../../common/interfaces';
+import { YouzanClientConfig } from './youzan.interface';
 export declare class YouzanClient {
     appKey: string;
     secretKey: string;
@@ -7,7 +7,7 @@ export declare class YouzanClient {
     accessToken: string;
     refreshToken: string;
     tokenExpire: number;
-    constructor(clientConfig: ClientConfig);
+    constructor(clientConfig: YouzanClientConfig);
     private getToken;
     execute(method: string, version: string, input: object): Promise<any>;
 }

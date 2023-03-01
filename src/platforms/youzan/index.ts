@@ -1,4 +1,4 @@
-import { YouzanClient } from './youzan_client';
+import { YouzanClient } from './youzan.client';
 
 export const youzan = {
     Client: YouzanClient

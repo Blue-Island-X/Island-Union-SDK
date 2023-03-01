@@ -3,14 +3,14 @@ import moment from 'moment';
 import md5 from 'crypto-js/md5';
 
 import { DataUtil } from '../../common/data';
-import { ClientConfig } from '../../common/interfaces';
+import { KaolaClientConfig } from './kaola.interface';
 
 export class KaolaClient {
     secretKey: string;
     unionId: string;
     endpoint: string;
 
-    constructor(clientConfig: ClientConfig) {
+    constructor(clientConfig: KaolaClientConfig) {
         this.secretKey = clientConfig.secretKey;
         this.unionId = clientConfig.unionId;
         this.endpoint = clientConfig.endpoint || 'https://cps.kaola.com/zhuanke/api';

@@ -1,4 +1,4 @@
-import { TaobaoClient } from './taobao_client';
+import { TaobaoClient } from './taobao.client';
 
 export const taobao = {
     Client: TaobaoClient

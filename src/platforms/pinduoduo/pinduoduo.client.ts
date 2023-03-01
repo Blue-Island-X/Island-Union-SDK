@@ -2,15 +2,15 @@ import axios from 'axios';
 import moment from 'moment';
 import md5 from 'crypto-js/md5';
 
-import { ClientConfig } from '../../common/interfaces';
-import { PinduoduoUtil } from './pinduoduo_util';
+import { PinduoduoUtil } from './pinduoduo.util';
+import { PinduoduoClientConfig } from './pinduoduo.interface';
 
 export class PinduoduoClient {
     appKey: string;
     secretKey: string;
     endpoint: string;
 
-    constructor(clientConfig: ClientConfig) {
+    constructor(clientConfig: PinduoduoClientConfig) {
         this.appKey = clientConfig.appKey;
         this.secretKey = clientConfig.secretKey;
         this.endpoint = clientConfig.endpoint || 'https://gw-api.pinduoduo.com/api/router';

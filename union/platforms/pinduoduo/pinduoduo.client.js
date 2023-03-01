@@ -7,7 +7,7 @@ exports.PinduoduoClient = void 0;
 const axios_1 = __importDefault(require("axios"));
 const moment_1 = __importDefault(require("moment"));
 const md5_1 = __importDefault(require("crypto-js/md5"));
-const pinduoduo_util_1 = require("./pinduoduo_util");
+const pinduoduo_util_1 = require("./pinduoduo.util");
 class PinduoduoClient {
     constructor(clientConfig) {
         this.appKey = clientConfig.appKey;

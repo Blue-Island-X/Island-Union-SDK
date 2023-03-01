@@ -119,7 +119,7 @@ import union from '@blueislandx/island-union-sdk';
 const client = new union.youzan.Client({
     appKey: '<你的 AppKey>',
     secretKey: '<你的 AppSecret>',
-    unionId: '<你的有赞客 Id>'
+    grantId: '<你的有赞客 Id>'
 });
 
 const result = await client.execute('<API 接口名称>', '<API 接口版本>', { <业务参数> });

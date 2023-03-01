@@ -1,4 +1,4 @@
-import { VipClient } from './vip_client';
+import { VipClient } from './vip.client';
 
 export const vip = {
     Client: VipClient

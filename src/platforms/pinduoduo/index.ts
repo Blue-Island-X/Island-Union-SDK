@@ -1,4 +1,4 @@
-import { PinduoduoClient } from './pinduoduo_client';
+import { PinduoduoClient } from './pinduoduo.client';
 
 export const pinduoduo = {
     Client: PinduoduoClient

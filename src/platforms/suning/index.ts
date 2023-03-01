@@ -1,4 +1,4 @@
-import { SuningClient } from './suning_client';
+import { SuningClient } from './suning.client';
 
 export const suning = {
     Client: SuningClient

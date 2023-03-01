@@ -1,9 +1,9 @@
-import { ClientConfig } from '../../common/interfaces';
-export declare class PinduoduoClient {
+import { TaobaoClientConfig } from './taobao.interface';
+export declare class TaobaoClient {
     appKey: string;
     secretKey: string;
     endpoint: string;
-    constructor(clientConfig: ClientConfig);
+    constructor(clientConfig: TaobaoClientConfig);
     sign(params: object): string;
     execute(method: string, input: object): Promise<any>;
 }

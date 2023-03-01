@@ -1,7 +1,7 @@
 import axios from 'axios';
 import moment from 'moment';
 
-import { ClientConfig } from '../../common/interfaces';
+import { YouzanClientConfig } from './youzan.interface';
 
 export class YouzanClient {
     appKey: string;
@@ -12,10 +12,10 @@ export class YouzanClient {
     refreshToken: string;
     tokenExpire: number;
 
-    constructor(clientConfig: ClientConfig) {
+    constructor(clientConfig: YouzanClientConfig) {
         this.appKey = clientConfig.appKey;
         this.secretKey = clientConfig.secretKey;
-        this.grantId = clientConfig.unionId;
+        this.grantId = clientConfig.grantId;
         this.endpoint = clientConfig.endpoint || 'https://open.youzanyun.com';
         this.accessToken = '';
         this.refreshToken = '';

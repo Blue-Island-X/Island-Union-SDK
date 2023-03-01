@@ -2,14 +2,14 @@ import axios from 'axios';
 import moment from 'moment';
 import hmacMD5 from 'crypto-js/hmac-md5';
 
-import { ClientConfig } from '../../common/interfaces';
+import { VipClientConfig } from './vip.interface';
 
 export class VipClient {
     appKey: string;
     secretKey: string;
     endpoint: string;
 
-    constructor(clientConfig: ClientConfig) {
+    constructor(clientConfig: VipClientConfig) {
         this.appKey = clientConfig.appKey;
         this.secretKey = clientConfig.secretKey;
         this.endpoint = clientConfig.endpoint || 'https://vop.vipapis.com';
