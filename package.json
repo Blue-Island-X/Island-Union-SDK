@@ -1,6 +1,6 @@
 {
   "name": "@blueislandx/island-union-sdk",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Island (小蓝岛) 购物平台联盟聚合 SDK (淘宝联盟、京东联盟、多多进宝、苏宁联盟、唯品会联盟、考拉联盟、有赞联盟)",
   "main": "union/index.js",
   "scripts": {
